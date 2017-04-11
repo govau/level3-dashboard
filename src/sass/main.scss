@@ -52,18 +52,25 @@ a.card {
 }
 
 .coat {
-	display: block;
-	margin: 0 auto 1.5em auto;
+	float: left;
 	max-width: 100%;
-	width: 135px;
+	height: 70px;
 }
 
 .uikit-footer__end {
 	text-align: center;
+	position: relative;
+	overflow: hidden;
 
 	p {
 		max-width: none;
 	}
+}
+
+.footer-text {
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }
 
 .uikit-page-alerts {
