@@ -1,0 +1,72 @@
+{
+	"name": "slumdesk",
+	"private": true,
+	"version": "1.0.0",
+	"description": "The site for the slumdesk dashboard",
+	"engines": {
+		"npm": ">=3.0.0"
+	},
+	"scripts": {
+		"build": "node-sass src/sass/main.scss site/css/main.css --output-style compressed",
+		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' -- npm run build",
+		"serve": "browser-sync start --server --startPath 'site' --files 'site/*.html, site/css/*.css, site/js/*.js'",
+		"watch": "npm-run-all --parallel serve watch:*",
+		"test": "echo \"Error: no test specified\" && exit 0"
+	},
+	"devDependencies": {
+		"browser-sync": "^2.18.8",
+		"node-sass": "^4.5.1",
+		"npm-run-all": "^4.0.2",
+		"onchange": "^3.2.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/govau/slumdesk.git"
+	},
+	"author": {
+		"name": "Commonwealth of Australia, DTA",
+		"email": "guides@digital.gov.au",
+		"url": "https://www.dta.gov.au/"
+	},
+	"contributors": [
+		{
+			"name": "Dominik Wilkowski",
+			"email": "hi@dominik-wilkowski.com",
+			"url": "https://dominik-wilkowski.com/"
+		}
+	],
+	"license": "MIT",
+	"dependencies": {
+		"@gov.au/body": "^0.1.0",
+		"@gov.au/cta-link": "^0.1.0",
+		"@gov.au/footer": "^0.1.0",
+		"@gov.au/grid-12": "^0.1.0",
+		"@gov.au/header": "^1.0.0",
+		"@gov.au/headings": "^0.1.0",
+		"@gov.au/link-list": "^0.1.0",
+		"@gov.au/page-alerts": "^0.1.1",
+		"@gov.au/pancake-sass": "^1.0.9"
+	},
+	"pancake": {
+		"auto-save": true,
+		"plugins": true,
+		"ignore": [],
+		"css": {
+			"minified": true,
+			"modules": false,
+			"browsers": [
+				"last 2 versions",
+				"ie 8",
+				"ie 9",
+				"ie 10"
+			],
+			"location": "pancake/css/",
+			"name": false
+		},
+		"sass": {
+			"modules": false,
+			"location": "src/sass/",
+			"name": "uikit.scss"
+		}
+	}
+}
