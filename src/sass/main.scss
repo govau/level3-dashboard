@@ -4,8 +4,10 @@
 	margin-bottom: uikit-space( 3 );
 }
 
-main + footer {
+.last-remark {
+	display: block;
 	margin-top: uikit-space( 3 );
+	text-align: right;
 }
 
 .uikit-header {
@@ -81,4 +83,25 @@ iframe {
 	border: 0;
 	height: 240px;
 	width: 100%;
+}
+
+.card {
+	overflow: hidden;
+	margin-bottom: 3em;
+}
+
+.card-img {
+	float: left;
+	width: 40px;
+	margin-right: 0.5em;
+}
+
+.card-text,
+.card-level {
+	display: block;
+	line-height: 1.3;
+}
+
+.card-text {
+	font-weight: 900;
 }
