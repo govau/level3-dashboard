@@ -30,7 +30,7 @@ function getDownloads( packages ) {
 	return new Promise( ( resolve, reject ) => {
 		for( const package of packages ) {
 			promises.push(
-				fetch(`https://api.npmjs.org/downloads/range/last-month/${ package }`, { method: 'get' })
+				fetch(`https://api.npmjs.org/downloads/range/last-month/${ package }?${ Math.floor( new Date().getTime() / 1000 ) }`, { method: 'get' })
 					.catch( error => reject( error ) )
 					.then( response => response.json() )
 					.then( thisData => data.push( getStats( thisData.downloads ) ) )
@@ -53,6 +53,7 @@ pancakePkgs = [
 	'@gov.au/pancake',
 	'@gov.au/pancake-sass',
 	'@gov.au/pancake-js',
+	'@gov.au/syrup',
 ];
 
 //adding pancake downloads to page
@@ -64,7 +65,7 @@ getDownloads( pancakePkgs )
 
 
 //getting uikit packages
-fetch('https://raw.githubusercontent.com/govau/uikit/master/uikit.json', { method: 'get' })
+fetch(`https://raw.githubusercontent.com/govau/uikit/master/uikit.json?${ Math.floor( new Date().getTime() / 1000 ) }`, { method: 'get' })
 	.catch( error => reject( error ) )
 	.then( response => response.json() )
 	.then( thisData => {
