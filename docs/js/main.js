@@ -8,8 +8,10 @@
 function getStats( downloads ) {
 	let count = 0;
 
-	for( const download of downloads ) {
-		count += download.downloads;
+	if( downloads !== undefined ) {
+		for( const download of downloads ) {
+			count += download.downloads;
+		}
 	}
 
 	return count;
