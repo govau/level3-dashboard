@@ -32,7 +32,7 @@ function getDownloads( packages ) {
 	return new Promise( ( resolve, reject ) => {
 		for( const package of packages ) {
 			promises.push(
-				fetch(`https://api.npmjs.org/downloads/range/last-month/${ package }?${ Math.floor( new Date().getTime() / 1000 ) }`, { method: 'get' })
+				fetch(`https://api.npmjs.org/downloads/range/last-year/${ package }?${ Math.floor( new Date().getTime() / 1000 ) }`, { method: 'get' })
 					.catch( error => reject( error ) )
 					.then( response => response.json() )
 					.then( thisData => data.push( getStats( thisData.downloads ) ) )
