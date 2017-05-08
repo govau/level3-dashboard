@@ -1,5 +1,9 @@
 @import 'uikit';
 
+.uikit-grid .container-fluid {
+	margin: 0 uikit-space( 2 );
+}
+
 .pagesection {
 	margin-bottom: uikit-space( 3 );
 }
@@ -10,7 +14,7 @@
 
 .last-remark {
 	display: block;
-	margin-top: uikit-space( 3 );
+	margin-right: uikit-space( 1 );
 	text-align: right;
 }
 
@@ -91,9 +95,9 @@ a.card {
 .iframe {
 	position: absolute;
 	left: 0;
-	top: -183px;
+	top: -163px;
 	border: 0;
-	height: 240px;
+	height: 215px;
 	width: 100%;
 }
 
