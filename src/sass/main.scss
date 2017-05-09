@@ -1,5 +1,20 @@
 @import 'uikit';
 
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.uikit-footer,
+main {
+	flex: 1;
+}
+
 .uikit-grid .container-fluid {
 	margin: 0 uikit-space( 2 );
 }
