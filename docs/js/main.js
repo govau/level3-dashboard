@@ -82,7 +82,7 @@ fetch(`https://raw.githubusercontent.com/govau/uikit/master/uikit.json?${ Math.f
 });
 
 // getting stars for pancake
-fetch(`http://api.github.com/repos/govau/pancake?${ Math.floor( new Date().getTime() / 1000 ) }`, { method: 'get' })
+fetch(`https://api.github.com/repos/govau/pancake?${ Math.floor( new Date().getTime() / 1000 ) }`, { method: 'get' })
 	.catch( error => reject( error ) )
 	.then( response => response.json() )
 	.then( response => {
@@ -90,7 +90,7 @@ fetch(`http://api.github.com/repos/govau/pancake?${ Math.floor( new Date().getTi
 });
 
 // getting stars for uikit
-fetch(`http://api.github.com/repos/govau/uikit?${ Math.floor( new Date().getTime() / 1000 ) }`, { method: 'get' })
+fetch(`https://api.github.com/repos/govau/uikit?${ Math.floor( new Date().getTime() / 1000 ) }`, { method: 'get' })
 	.catch( error => reject( error ) )
 	.then( response => response.json() )
 	.then( response => {
