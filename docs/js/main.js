@@ -50,7 +50,7 @@ function getDownloads( packages ) {
 }
 
 
-//packages to be checked
+// packages to be checked
 pancakePkgs = [
 	'@gov.au/pancake',
 	'@gov.au/pancake-sass',
@@ -58,7 +58,7 @@ pancakePkgs = [
 	'@gov.au/syrup',
 ];
 
-//adding pancake downloads to page
+// adding pancake downloads to page
 getDownloads( pancakePkgs )
 	.catch( error => console.error( error ) )
 	.then( data => {
@@ -66,17 +66,33 @@ getDownloads( pancakePkgs )
 });
 
 
-//getting uikit packages
+// getting uikit packages
 fetch(`https://raw.githubusercontent.com/govau/uikit/master/uikit.json?${ Math.floor( new Date().getTime() / 1000 ) }`, { method: 'get' })
 	.catch( error => reject( error ) )
 	.then( response => response.json() )
 	.then( thisData => {
 		uikitPkgs = Object.keys( thisData );
 
-		//adding uikit downloads to page
+		// adding uikit downloads to page
 		getDownloads( uikitPkgs )
 			.catch( error => console.error( error ) )
 			.then( data => {
 				document.getElementById("uikit-download").innerHTML = data;
 		});
+});
+
+// getting stars for pancake
+fetch(`http://api.github.com/repos/govau/pancake?${ Math.floor( new Date().getTime() / 1000 ) }`, { method: 'get' })
+	.catch( error => reject( error ) )
+	.then( response => response.json() )
+	.then( response => {
+		document.getElementById("pancake-stars").innerHTML = response.stargazers_count;
+});
+
+// getting stars for uikit
+fetch(`http://api.github.com/repos/govau/uikit?${ Math.floor( new Date().getTime() / 1000 ) }`, { method: 'get' })
+	.catch( error => reject( error ) )
+	.then( response => response.json() )
+	.then( response => {
+		document.getElementById("uikit-stars").innerHTML = response.stargazers_count;
 });

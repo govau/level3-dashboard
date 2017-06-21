@@ -2,28 +2,14 @@
 
 html {
 	height: 100%;
-}
-
-body {
 	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
-.uikit-footer,
-main {
-	flex: 1;
 }
 
 .uikit-grid .container-fluid {
 	margin: 0 uikit-space( 2 );
 }
 
-.pagesection {
-	margin-bottom: uikit-space( 3 );
-}
-
-.section {
+section {
 	margin-bottom: uikit-space( 1 );
 }
 
@@ -35,65 +21,17 @@ main {
 
 .uikit-header {
 	font-family: $uikit-font-monospace;
-	margin-bottom: uikit-space( 3 );
-}
-
-.uikit-header-subline {
-	display: block;
-	max-width: 27em;
+	margin-bottom: uikit-space( 2 );
 }
 
 .content-box {
 	margin-bottom: uikit-space( 1 );
 }
 
-a.card {
-	display: block;
-	border-radius: $uikit-border-radius;
-	border: $uikit-borderize;
-	background-color: $uikit-colour-Background;
-
-	&:hover .uikit-cta-link {
-		&:after {
-			margin: 0 uikit-space( 0.1 ) 0 uikit-space( 0.4 );
-		}
-	}
-
-	.card__top {
-		display: block;
-		padding: uikit-space( 0.5 );
-	}
-
-	.uikit-cta-link {
-		display: block;
-		background-color: #fff;
-		margin-bottom: 0;
-		padding: uikit-space( 0.5 );
-		border-bottom-right-radius: $uikit-border-radius;
-		border-bottom-left-radius: $uikit-border-radius;
-	}
-}
-
 .coat {
 	float: left;
 	max-width: 100%;
 	height: 100px;
-}
-
-.uikit-footer__end {
-	text-align: center;
-	position: relative;
-	overflow: hidden;
-
-	p {
-		max-width: none;
-	}
-}
-
-.footer-text {
-	position: absolute;
-	bottom: 0;
-	right: 0;
 }
 
 .uikit-page-alerts {
@@ -103,34 +41,38 @@ a.card {
 .iframe-wrapper {
 	overflow: hidden;
 	position: relative;
-	height: 70px;
+	height: 55px;
 	width: 100%;
+	max-width: 300px;
 }
 
 .iframe {
 	position: absolute;
-	left: 0;
-	top: -163px;
+	left: -25px;
+	top: -287px;
 	border: 0;
-	height: 215px;
-	width: 100%;
+	height: 329px;
+	width: 450px;
 }
 
 .card {
+	display: inline-block;
 	overflow: hidden;
-	margin-bottom: 3em;
+	margin: 0 2em 3em 0;
+	width: auto;
 }
 
 .card-img {
 	float: left;
 	width: 40px;
-	margin-right: 0.5em;
 }
 
 .card-text,
 .card-level {
 	display: block;
 	line-height: 1.3;
+	padding-left: 52px;
+	white-space: nowrap;
 }
 
 .card-text {
