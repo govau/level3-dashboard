@@ -86,7 +86,9 @@ fetch(`https://api.github.com/repos/govau/pancake?${ Math.floor( new Date().getT
 	.catch( error => reject( error ) )
 	.then( response => response.json() )
 	.then( response => {
-		document.getElementById("pancake-stars").innerHTML = response.stargazers_count;
+		if( response.stargazers_count ) {
+			document.getElementById("pancake-stars").innerHTML = response.stargazers_count;
+		}
 });
 
 // getting stars for uikit
@@ -94,5 +96,7 @@ fetch(`https://api.github.com/repos/govau/uikit?${ Math.floor( new Date().getTim
 	.catch( error => reject( error ) )
 	.then( response => response.json() )
 	.then( response => {
-		document.getElementById("uikit-stars").innerHTML = response.stargazers_count;
+		if( response.stargazers_count ) {
+			document.getElementById("uikit-stars").innerHTML = response.stargazers_count;
+		}
 });
